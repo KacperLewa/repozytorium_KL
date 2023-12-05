@@ -13,12 +13,18 @@ public class Dane {
     private String tytul;
     private String notka;
     private String data;
+    private String kategoria;
     
-    public Dane(int id, String tytul, String notka, String data){
+    public Dane(int id, String tytul, String notka, String kategoria, String data){
         this.id = id;
         this.tytul = tytul;
         this.notka = notka;
+        this.kategoria = kategoria;
         this.data = data;
+    }
+    
+    public int getID(){
+        return id;
     }
     
     public String getTytul(){
@@ -31,6 +37,10 @@ public class Dane {
     
     public String getData(){
         return data;
+    }
+    
+    public String getKategoria(){
+        return kategoria;
     }
     
 }

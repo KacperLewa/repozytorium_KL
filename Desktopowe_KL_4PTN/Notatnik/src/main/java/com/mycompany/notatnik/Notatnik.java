@@ -17,6 +17,9 @@ import javax.swing.ListModel;
 public class Notatnik extends javax.swing.JFrame {
     
     Conn c = new Conn();
+    DefaultListModel<String> model = new  DefaultListModel<String>();
+    ArrayList<Dane> tab = c.con("SELECT tytul FROM notatki");
+    
 
     /**
      * Creates new form Notatnik
@@ -24,8 +27,8 @@ public class Notatnik extends javax.swing.JFrame {
     public Notatnik() {
         initComponents();
         
-        DefaultListModel<String> model = new  DefaultListModel<String>(); 
-        ArrayList<Dane> tab = c.con("SELECT tytul FROM notatki");
+         
+        
         for(int i=0;i<tab.size();i++){
             model.addElement(tab.get(i).getTytul());
         }
@@ -58,6 +61,8 @@ public class Notatnik extends javax.swing.JFrame {
         jLabel4 = new javax.swing.JLabel();
         jTFData = new javax.swing.JTextField();
         jLabel5 = new javax.swing.JLabel();
+        jLabel6 = new javax.swing.JLabel();
+        jTFKat = new javax.swing.JTextField();
         jMenuBar1 = new javax.swing.JMenuBar();
         jMenu1 = new javax.swing.JMenu();
         jMenuItem1 = new javax.swing.JMenuItem();
@@ -67,6 +72,7 @@ public class Notatnik extends javax.swing.JFrame {
         jMenuItem3 = new javax.swing.JMenuItem();
         jMenuItem4 = new javax.swing.JMenuItem();
         jMenuItem5 = new javax.swing.JMenuItem();
+        jMIUsun = new javax.swing.JMenuItem();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Notatnik");
@@ -113,6 +119,11 @@ public class Notatnik extends javax.swing.JFrame {
             public int getSize() { return strings.length; }
             public String getElementAt(int i) { return strings[i]; }
         });
+        jLNotatki.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jLNotatkiMouseClicked(evt);
+            }
+        });
         jScrollPane2.setViewportView(jLNotatki);
 
         jLabel4.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
@@ -127,6 +138,11 @@ public class Notatnik extends javax.swing.JFrame {
 
         jLabel5.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         jLabel5.setText("Data");
+
+        jLabel6.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        jLabel6.setText("Kategoria");
+
+        jTFKat.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -150,9 +166,14 @@ public class Notatnik extends javax.swing.JFrame {
                                 .addComponent(jTFData, javax.swing.GroupLayout.Alignment.LEADING)
                                 .addComponent(jTFTytul, javax.swing.GroupLayout.Alignment.LEADING)))
                         .addGap(38, 38, 38)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 79, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 290, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 290, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                                    .addComponent(jLabel6, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(jLabel3, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 79, Short.MAX_VALUE))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(jTFKat)))))
                 .addContainerGap(23, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
@@ -163,12 +184,15 @@ public class Notatnik extends javax.swing.JFrame {
                 .addGap(20, 20, 20)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel2)
-                    .addComponent(jLabel3))
+                    .addComponent(jLabel6)
+                    .addComponent(jTFKat, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jTFTytul, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel3))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addComponent(jTFTytul, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(jLabel5)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(jTFData, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -234,6 +258,14 @@ public class Notatnik extends javax.swing.JFrame {
 
         jMenu2.add(jMenu3);
 
+        jMIUsun.setText("Usuń");
+        jMIUsun.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMIUsunActionPerformed(evt);
+            }
+        });
+        jMenu2.add(jMIUsun);
+
         jMenuBar1.add(jMenu2);
 
         setJMenuBar(jMenuBar1);
@@ -261,7 +293,22 @@ public class Notatnik extends javax.swing.JFrame {
     }//GEN-LAST:event_jTFTytulActionPerformed
 
     private void jBZapiszActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBZapiszActionPerformed
-        ArrayList<Dane> tab = c.con("INSERT INTO notatki VALUES ('"+jTFTytul.getText()+"','"+jTATresc.getText()+"','"+jTFData.getText()+"')");
+        for(int i=0; i<tab.size(); i++){
+            if(jTFTytul.getText().equals(tab.get(i).getTytul())){
+               ArrayList<Dane> tabinf = c.con("UPDATE notatki SET Opis='"+jTATresc.getText()+"', Kategoria='"+jTFKat.getText()+"', Data='"+jTFData.getText()+"'"); 
+            }else if(i==tab.size()-1){
+                ArrayList<Dane> tabinf = c.con("INSERT INTO notatki VALUES ('"+jTFTytul.getText()+"','"+jTATresc.getText()+"','"+jTFKat.getText()+"','"+jTFData.getText()+"')");
+            }
+        }
+        
+        model.removeAllElements();
+        ArrayList<Dane> tab2 = c.con("SELECT tytul FROM notatki");
+        for(int i=0;i<tab2.size();i++){
+            model.addElement(tab2.get(i).getTytul());
+        }
+        model.addElement("3");
+        jLNotatki.setModel(model);
+        
     }//GEN-LAST:event_jBZapiszActionPerformed
 
     private void jTFDataActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTFDataActionPerformed
@@ -293,6 +340,29 @@ public class Notatnik extends javax.swing.JFrame {
     private void jMenuItem5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem5ActionPerformed
         jPanel1.setBackground(Color.green);
     }//GEN-LAST:event_jMenuItem5ActionPerformed
+
+    private void jMIUsunActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMIUsunActionPerformed
+        String tytul = jLNotatki.getSelectedValue();
+        for(int i=0; i<tab.size(); i++){
+            if(tab.get(i).getTytul().equals(tytul)){
+                ArrayList<Dane> tabinf = c.con("DELETE FROM notatnik WHERE id='"+tab.get(i).getID()+"';");
+            }
+        }
+        model.removeAllElements();
+        ArrayList<Dane> tab2 = c.con("SELECT tytul FROM notatki");
+        for(int i=0;i<tab2.size();i++){
+            model.addElement(tab2.get(i).getTytul());
+        }
+        jLNotatki.setModel(model);
+    }//GEN-LAST:event_jMIUsunActionPerformed
+
+    private void jLNotatkiMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLNotatkiMouseClicked
+        int a = jLNotatki.getSelectedIndex();
+        jTATresc.setText(tab.get(a).getNotka());
+        jTFData.setText(tab.get(a).getData());
+        jTFKat.setText(tab.get(a).getKategoria());
+        jTFTytul.setText(tab.get(a).getTytul());
+    }//GEN-LAST:event_jLNotatkiMouseClicked
 
     /**
      * @param args the command line arguments
@@ -338,6 +408,8 @@ public class Notatnik extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel6;
+    private javax.swing.JMenuItem jMIUsun;
     private javax.swing.JMenu jMenu1;
     private javax.swing.JMenu jMenu2;
     private javax.swing.JMenu jMenu3;
@@ -352,6 +424,7 @@ public class Notatnik extends javax.swing.JFrame {
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JTextArea jTATresc;
     private javax.swing.JTextField jTFData;
+    private javax.swing.JTextField jTFKat;
     private javax.swing.JTextField jTFTytul;
     // End of variables declaration//GEN-END:variables
 }
