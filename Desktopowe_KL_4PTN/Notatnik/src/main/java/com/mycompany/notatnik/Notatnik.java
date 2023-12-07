@@ -18,7 +18,7 @@ public class Notatnik extends javax.swing.JFrame {
     
     Conn c = new Conn();
     DefaultListModel<String> model = new  DefaultListModel<String>();
-    ArrayList<Dane> tab = c.con("SELECT tytul FROM notatki");
+    ArrayList<Dane> tab = c.con("SELECT tytul FROM notatnik");
     
 
     /**
@@ -72,12 +72,13 @@ public class Notatnik extends javax.swing.JFrame {
         jMenuItem3 = new javax.swing.JMenuItem();
         jMenuItem4 = new javax.swing.JMenuItem();
         jMenuItem5 = new javax.swing.JMenuItem();
+        jMenuItem6 = new javax.swing.JMenuItem();
         jMIUsun = new javax.swing.JMenuItem();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Notatnik");
 
-        jPanel1.setBackground(new java.awt.Color(204, 204, 204));
+        jPanel1.setBackground(new java.awt.Color(153, 153, 153));
         jPanel1.setPreferredSize(new java.awt.Dimension(500, 500));
 
         jLabel1.setFont(new java.awt.Font("Segoe UI", 1, 36)); // NOI18N
@@ -210,6 +211,7 @@ public class Notatnik extends javax.swing.JFrame {
 
         jMenu1.setText("File");
 
+        jMenuItem1.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_ESCAPE, 0));
         jMenuItem1.setText("Wyjdź");
         jMenuItem1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -224,6 +226,7 @@ public class Notatnik extends javax.swing.JFrame {
 
         jMenu3.setText("Tło");
 
+        jMenuItem2.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_1, java.awt.event.InputEvent.CTRL_DOWN_MASK));
         jMenuItem2.setText("Podstawowy");
         jMenuItem2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -232,6 +235,7 @@ public class Notatnik extends javax.swing.JFrame {
         });
         jMenu3.add(jMenuItem2);
 
+        jMenuItem3.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_2, java.awt.event.InputEvent.CTRL_DOWN_MASK));
         jMenuItem3.setText("Czerwony");
         jMenuItem3.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -240,6 +244,7 @@ public class Notatnik extends javax.swing.JFrame {
         });
         jMenu3.add(jMenuItem3);
 
+        jMenuItem4.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_3, java.awt.event.InputEvent.CTRL_DOWN_MASK));
         jMenuItem4.setText("Niebieski");
         jMenuItem4.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -248,6 +253,7 @@ public class Notatnik extends javax.swing.JFrame {
         });
         jMenu3.add(jMenuItem4);
 
+        jMenuItem5.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_4, java.awt.event.InputEvent.CTRL_DOWN_MASK));
         jMenuItem5.setText("Zielony");
         jMenuItem5.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -258,6 +264,11 @@ public class Notatnik extends javax.swing.JFrame {
 
         jMenu2.add(jMenu3);
 
+        jMenuItem6.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_S, java.awt.event.InputEvent.CTRL_DOWN_MASK));
+        jMenuItem6.setText("Zapisz");
+        jMenu2.add(jMenuItem6);
+
+        jMIUsun.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_DELETE, 0));
         jMIUsun.setText("Usuń");
         jMIUsun.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -341,6 +352,14 @@ public class Notatnik extends javax.swing.JFrame {
         jPanel1.setBackground(Color.green);
     }//GEN-LAST:event_jMenuItem5ActionPerformed
 
+    private void jLNotatkiMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLNotatkiMouseClicked
+        int a = jLNotatki.getSelectedIndex();
+        jTATresc.setText(tab.get(a).getNotka());
+        jTFData.setText(tab.get(a).getData());
+        jTFKat.setText(tab.get(a).getKategoria());
+        jTFTytul.setText(tab.get(a).getTytul());
+    }//GEN-LAST:event_jLNotatkiMouseClicked
+
     private void jMIUsunActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMIUsunActionPerformed
         String tytul = jLNotatki.getSelectedValue();
         for(int i=0; i<tab.size(); i++){
@@ -355,14 +374,6 @@ public class Notatnik extends javax.swing.JFrame {
         }
         jLNotatki.setModel(model);
     }//GEN-LAST:event_jMIUsunActionPerformed
-
-    private void jLNotatkiMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLNotatkiMouseClicked
-        int a = jLNotatki.getSelectedIndex();
-        jTATresc.setText(tab.get(a).getNotka());
-        jTFData.setText(tab.get(a).getData());
-        jTFKat.setText(tab.get(a).getKategoria());
-        jTFTytul.setText(tab.get(a).getTytul());
-    }//GEN-LAST:event_jLNotatkiMouseClicked
 
     /**
      * @param args the command line arguments
@@ -419,6 +430,7 @@ public class Notatnik extends javax.swing.JFrame {
     private javax.swing.JMenuItem jMenuItem3;
     private javax.swing.JMenuItem jMenuItem4;
     private javax.swing.JMenuItem jMenuItem5;
+    private javax.swing.JMenuItem jMenuItem6;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;

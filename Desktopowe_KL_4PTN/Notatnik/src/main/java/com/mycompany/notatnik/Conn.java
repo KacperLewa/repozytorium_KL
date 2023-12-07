@@ -14,7 +14,7 @@ import java.util.ArrayList;
 public class Conn {
     private String url = "jdbc:mysql://localhost:3306/notatnik";
     private String driver = "com.mysql.jdbc.Driver";
-    private String userName = "root";
+    private String userName = "root@localhost";
     private String dbpassword = "haslo";
     
     public ArrayList<Dane> con(String qr){
@@ -27,8 +27,10 @@ public class Conn {
             if(qr.contains("SELECT")){
                 while(rs.next()){
                 tab.add(new Dane(rs.getInt(1), rs.getString(2), rs.getString(3), rs.getString(4), rs.getString(5)));
+                System.out.println("dfs");
             }
             }
+            System.out.println(tab);
             st.close();
             c.close();
             System.out.println("co jest");
