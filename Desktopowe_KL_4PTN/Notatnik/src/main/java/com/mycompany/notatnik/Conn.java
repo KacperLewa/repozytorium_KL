@@ -5,6 +5,7 @@
 package com.mycompany.notatnik;
 
 import java.sql.*;
+import com.mysql.jdbc.Driver;
 import java.util.ArrayList;
 
 /**
@@ -14,13 +15,14 @@ import java.util.ArrayList;
 public class Conn {
     private String url = "jdbc:mysql://localhost:3306/notatnik";
     private String driver = "com.mysql.jdbc.Driver";
-    private String userName = "root@localhost";
+    private String userName = "root";
     private String dbpassword = "haslo";
     
     public ArrayList<Dane> con(String qr){
         ArrayList<Dane> tab = new ArrayList<>();
         try{
             Class.forName(driver);
+            //Class.forName("com.mysql.cj.jdbc.Driver").newInstance();
             Connection c = DriverManager.getConnection(url,userName,dbpassword);
             Statement st = c.createStatement();
             ResultSet rs = st.executeQuery(qr);

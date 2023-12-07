@@ -18,7 +18,7 @@ public class Notatnik extends javax.swing.JFrame {
     
     Conn c = new Conn();
     DefaultListModel<String> model = new  DefaultListModel<String>();
-    ArrayList<Dane> tab = c.con("SELECT tytul FROM notatnik");
+    ArrayList<Dane> tab = c.con("SELECT tytul FROM notatki");
     
 
     /**
