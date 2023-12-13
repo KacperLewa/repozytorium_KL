@@ -5,7 +5,7 @@
 package com.mycompany.notatnik;
 
 import java.sql.*;
-import com.mysql.jdbc.Driver;
+//import com.mysql.jdbc.Driver;
 import java.util.ArrayList;
 
 /**
@@ -14,7 +14,7 @@ import java.util.ArrayList;
  */
 public class Conn {
     private String url = "jdbc:mysql://localhost:3306/notatnik";
-    private String driver = "com.mysql.jdbc.Driver";
+    private String driver = "com.mysql.cj.jdbc.Driver";
     private String userName = "root";
     private String dbpassword = "haslo";
     
@@ -29,7 +29,7 @@ public class Conn {
             if(qr.contains("SELECT")){
                 while(rs.next()){
                 tab.add(new Dane(rs.getInt(1), rs.getString(2), rs.getString(3), rs.getString(4), rs.getString(5)));
-                System.out.println("dfs");
+                
             }
             }
             System.out.println(tab);
@@ -42,6 +42,20 @@ public class Conn {
             System.out.println(e);
         }
         return tab;
+    }
+    
+    public void insert(String qr){
+        try{
+            Class.forName(driver);
+            //Class.forName("com.mysql.cj.jdbc.Driver").newInstance();
+            Connection c = DriverManager.getConnection(url,userName,dbpassword);
+            Statement st = c.createStatement();
+            st.executeUpdate(qr);
+            st.close();
+            c.close();
+        }catch(Exception e){
+            System.out.println(e);
+        }
     }
     
 }

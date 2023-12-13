@@ -18,7 +18,8 @@ public class Notatnik extends javax.swing.JFrame {
     
     Conn c = new Conn();
     DefaultListModel<String> model = new  DefaultListModel<String>();
-    ArrayList<Dane> tab = c.con("SELECT tytul FROM notatki");
+    ArrayList<Dane> tab = c.con("SELECT * FROM notatki");
+    
     
 
     /**
@@ -65,6 +66,8 @@ public class Notatnik extends javax.swing.JFrame {
         jTFKat = new javax.swing.JTextField();
         jMenuBar1 = new javax.swing.JMenuBar();
         jMenu1 = new javax.swing.JMenu();
+        jMenuItem6 = new javax.swing.JMenuItem();
+        jMIUsun = new javax.swing.JMenuItem();
         jMenuItem1 = new javax.swing.JMenuItem();
         jMenu2 = new javax.swing.JMenu();
         jMenu3 = new javax.swing.JMenu();
@@ -72,8 +75,6 @@ public class Notatnik extends javax.swing.JFrame {
         jMenuItem3 = new javax.swing.JMenuItem();
         jMenuItem4 = new javax.swing.JMenuItem();
         jMenuItem5 = new javax.swing.JMenuItem();
-        jMenuItem6 = new javax.swing.JMenuItem();
-        jMIUsun = new javax.swing.JMenuItem();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Notatnik");
@@ -191,7 +192,7 @@ public class Notatnik extends javax.swing.JFrame {
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jTFTytul, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel3))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 15, Short.MAX_VALUE)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addComponent(jLabel5)
@@ -210,6 +211,19 @@ public class Notatnik extends javax.swing.JFrame {
         );
 
         jMenu1.setText("File");
+
+        jMenuItem6.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_S, java.awt.event.InputEvent.CTRL_DOWN_MASK));
+        jMenuItem6.setText("Zapisz");
+        jMenu1.add(jMenuItem6);
+
+        jMIUsun.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_DELETE, 0));
+        jMIUsun.setText("Usuń");
+        jMIUsun.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMIUsunActionPerformed(evt);
+            }
+        });
+        jMenu1.add(jMIUsun);
 
         jMenuItem1.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_ESCAPE, 0));
         jMenuItem1.setText("Wyjdź");
@@ -264,19 +278,6 @@ public class Notatnik extends javax.swing.JFrame {
 
         jMenu2.add(jMenu3);
 
-        jMenuItem6.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_S, java.awt.event.InputEvent.CTRL_DOWN_MASK));
-        jMenuItem6.setText("Zapisz");
-        jMenu2.add(jMenuItem6);
-
-        jMIUsun.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_DELETE, 0));
-        jMIUsun.setText("Usuń");
-        jMIUsun.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jMIUsunActionPerformed(evt);
-            }
-        });
-        jMenu2.add(jMIUsun);
-
         jMenuBar1.add(jMenu2);
 
         setJMenuBar(jMenuBar1);
@@ -285,18 +286,15 @@ public class Notatnik extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, Short.MAX_VALUE))
+            .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, Short.MAX_VALUE))
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 512, Short.MAX_VALUE)
         );
 
         pack();
+        setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
     private void jTFTytulActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTFTytulActionPerformed
@@ -306,18 +304,19 @@ public class Notatnik extends javax.swing.JFrame {
     private void jBZapiszActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBZapiszActionPerformed
         for(int i=0; i<tab.size(); i++){
             if(jTFTytul.getText().equals(tab.get(i).getTytul())){
-               ArrayList<Dane> tabinf = c.con("UPDATE notatki SET Opis='"+jTATresc.getText()+"', Kategoria='"+jTFKat.getText()+"', Data='"+jTFData.getText()+"'"); 
+                c.insert("UPDATE notatki SET Opis='"+jTATresc.getText()+"', Kategoria='"+jTFKat.getText()+"', Data='"+jTFData.getText()+"' WHERE Tytul='"+jTFTytul.getText()+"'");
+                break;
             }else if(i==tab.size()-1){
-                ArrayList<Dane> tabinf = c.con("INSERT INTO notatki VALUES ('"+jTFTytul.getText()+"','"+jTATresc.getText()+"','"+jTFKat.getText()+"','"+jTFData.getText()+"')");
+                c.insert("INSERT INTO notatki VALUES (NULL, '"+jTFTytul.getText()+"','"+jTATresc.getText()+"','"+jTFKat.getText()+"','"+jTFData.getText()+"')");
             }
         }
         
         model.removeAllElements();
-        ArrayList<Dane> tab2 = c.con("SELECT tytul FROM notatki");
-        for(int i=0;i<tab2.size();i++){
-            model.addElement(tab2.get(i).getTytul());
+        tab = c.con("SELECT * FROM notatki");
+        for(int i=0;i<tab.size();i++){
+            model.addElement(tab.get(i).getTytul());
         }
-        model.addElement("3");
+       
         jLNotatki.setModel(model);
         
     }//GEN-LAST:event_jBZapiszActionPerformed
@@ -364,13 +363,13 @@ public class Notatnik extends javax.swing.JFrame {
         String tytul = jLNotatki.getSelectedValue();
         for(int i=0; i<tab.size(); i++){
             if(tab.get(i).getTytul().equals(tytul)){
-                ArrayList<Dane> tabinf = c.con("DELETE FROM notatnik WHERE id='"+tab.get(i).getID()+"';");
+                c.insert("DELETE FROM notatki WHERE id='"+tab.get(i).getID()+"';");
             }
         }
         model.removeAllElements();
-        ArrayList<Dane> tab2 = c.con("SELECT tytul FROM notatki");
-        for(int i=0;i<tab2.size();i++){
-            model.addElement(tab2.get(i).getTytul());
+        tab = c.con("SELECT * FROM notatki");
+        for(int i=0;i<tab.size();i++){
+            model.addElement(tab.get(i).getTytul());
         }
         jLNotatki.setModel(model);
     }//GEN-LAST:event_jMIUsunActionPerformed
