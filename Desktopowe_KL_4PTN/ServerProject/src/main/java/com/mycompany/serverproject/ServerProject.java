@@ -147,7 +147,6 @@ public class ServerProject extends javax.swing.JFrame {
         jPanel1.setBackground(new java.awt.Color(204, 204, 204));
         jPanel1.setLayout(null);
 
-        jButton1.setIcon(new javax.swing.ImageIcon("C:\\Users\\kacpe\\OneDrive\\Pulpit\\Biały-Pionek.png")); // NOI18N
         jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton1ActionPerformed(evt);
@@ -155,133 +154,73 @@ public class ServerProject extends javax.swing.JFrame {
         });
         jPanel1.add(jButton1);
         jButton1.setBounds(10, 470, 50, 50);
-
-        jButton2.setIcon(new javax.swing.ImageIcon("C:\\Users\\kacpe\\OneDrive\\Pulpit\\Biały-Pionek.png")); // NOI18N
         jPanel1.add(jButton2);
         jButton2.setBounds(90, 470, 50, 50);
-
-        jButton3.setIcon(new javax.swing.ImageIcon("C:\\Users\\kacpe\\OneDrive\\Pulpit\\Biały-Pionek.png")); // NOI18N
         jPanel1.add(jButton3);
         jButton3.setBounds(160, 470, 50, 50);
-
-        jButton4.setIcon(new javax.swing.ImageIcon("C:\\Users\\kacpe\\OneDrive\\Pulpit\\Biały-Pionek.png")); // NOI18N
         jPanel1.add(jButton4);
         jButton4.setBounds(240, 470, 50, 50);
-
-        jButton5.setIcon(new javax.swing.ImageIcon("C:\\Users\\kacpe\\OneDrive\\Pulpit\\Biały-Pionek.png")); // NOI18N
         jPanel1.add(jButton5);
         jButton5.setBounds(310, 470, 50, 50);
-
-        jButton6.setIcon(new javax.swing.ImageIcon("C:\\Users\\kacpe\\OneDrive\\Pulpit\\Biały-Pionek.png")); // NOI18N
         jPanel1.add(jButton6);
         jButton6.setBounds(390, 470, 50, 50);
-
-        jButton7.setIcon(new javax.swing.ImageIcon("C:\\Users\\kacpe\\OneDrive\\Pulpit\\Biały-Pionek.png")); // NOI18N
         jPanel1.add(jButton7);
         jButton7.setBounds(460, 470, 50, 50);
-
-        jButton8.setIcon(new javax.swing.ImageIcon("C:\\Users\\kacpe\\OneDrive\\Pulpit\\Biały-Pionek.png")); // NOI18N
         jPanel1.add(jButton8);
         jButton8.setBounds(540, 470, 50, 50);
-
-        jButton9.setIcon(new javax.swing.ImageIcon("C:\\Users\\kacpe\\OneDrive\\Pulpit\\Czarny-Pionek.png")); // NOI18N
         jPanel1.add(jButton9);
         jButton9.setBounds(10, 90, 50, 50);
-
-        jButton10.setIcon(new javax.swing.ImageIcon("C:\\Users\\kacpe\\OneDrive\\Pulpit\\Czarny-Pionek.png")); // NOI18N
         jPanel1.add(jButton10);
         jButton10.setBounds(90, 90, 50, 50);
-
-        jButton11.setIcon(new javax.swing.ImageIcon("C:\\Users\\kacpe\\OneDrive\\Pulpit\\Czarny-Pionek.png")); // NOI18N
         jPanel1.add(jButton11);
         jButton11.setBounds(160, 90, 50, 50);
-
-        jButton12.setIcon(new javax.swing.ImageIcon("C:\\Users\\kacpe\\OneDrive\\Pulpit\\Czarny-Pionek.png")); // NOI18N
         jPanel1.add(jButton12);
         jButton12.setBounds(240, 90, 50, 50);
-
-        jButton13.setIcon(new javax.swing.ImageIcon("C:\\Users\\kacpe\\OneDrive\\Pulpit\\Czarny-Pionek.png")); // NOI18N
         jPanel1.add(jButton13);
         jButton13.setBounds(310, 90, 50, 50);
-
-        jButton14.setIcon(new javax.swing.ImageIcon("C:\\Users\\kacpe\\OneDrive\\Pulpit\\Czarny-Pionek.png")); // NOI18N
         jPanel1.add(jButton14);
         jButton14.setBounds(390, 90, 50, 50);
-
-        jButton15.setIcon(new javax.swing.ImageIcon("C:\\Users\\kacpe\\OneDrive\\Pulpit\\Czarny-Pionek.png")); // NOI18N
         jPanel1.add(jButton15);
         jButton15.setBounds(460, 90, 50, 50);
-
-        jButton16.setIcon(new javax.swing.ImageIcon("C:\\Users\\kacpe\\OneDrive\\Pulpit\\Czarny-Pionek.png")); // NOI18N
         jPanel1.add(jButton16);
         jButton16.setBounds(540, 90, 50, 50);
 
-        jButton17.setIcon(new javax.swing.ImageIcon("C:\\Users\\kacpe\\OneDrive\\Pulpit\\Bwieza.png")); // NOI18N
+        jButton17.setBackground(new java.awt.Color(0, 51, 51));
         jButton17.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton17ActionPerformed(evt);
             }
         });
         jPanel1.add(jButton17);
-        jButton17.setBounds(10, 540, 50, 60);
-
-        jButton18.setIcon(new javax.swing.ImageIcon("C:\\Users\\kacpe\\OneDrive\\Pulpit\\Bwieza.png")); // NOI18N
+        jButton17.setBounds(10, 540, 50, 50);
         jPanel1.add(jButton18);
-        jButton18.setBounds(540, 540, 50, 57);
-
-        jButton19.setIcon(new javax.swing.ImageIcon("C:\\Users\\kacpe\\OneDrive\\Pulpit\\CzWieza.png")); // NOI18N
+        jButton18.setBounds(540, 540, 50, 50);
         jPanel1.add(jButton19);
-        jButton19.setBounds(10, 10, 50, 57);
-
-        jButton20.setIcon(new javax.swing.ImageIcon("C:\\Users\\kacpe\\OneDrive\\Pulpit\\CzWieza.png")); // NOI18N
+        jButton19.setBounds(10, 10, 50, 50);
         jPanel1.add(jButton20);
         jButton20.setBounds(540, 10, 50, 60);
-
-        jButton21.setIcon(new javax.swing.ImageIcon("C:\\Users\\kacpe\\OneDrive\\Pulpit\\Biały-Skoczek.png")); // NOI18N
         jPanel1.add(jButton21);
-        jButton21.setBounds(80, 540, 56, 50);
-
-        jButton22.setIcon(new javax.swing.ImageIcon("C:\\Users\\kacpe\\OneDrive\\Pulpit\\Biały-Skoczek.png")); // NOI18N
+        jButton21.setBounds(80, 540, 72, 50);
         jPanel1.add(jButton22);
-        jButton22.setBounds(460, 540, 56, 50);
-
-        jButton23.setIcon(new javax.swing.ImageIcon("C:\\Users\\kacpe\\OneDrive\\Pulpit\\Czarny-Skoczek.png")); // NOI18N
+        jButton22.setBounds(460, 540, 72, 50);
         jPanel1.add(jButton23);
         jButton23.setBounds(90, 10, 50, 50);
-
-        jButton24.setIcon(new javax.swing.ImageIcon("C:\\Users\\kacpe\\OneDrive\\Pulpit\\Czarny-Skoczek.png")); // NOI18N
         jPanel1.add(jButton24);
         jButton24.setBounds(460, 10, 50, 50);
-
-        jButton25.setIcon(new javax.swing.ImageIcon("C:\\Users\\kacpe\\OneDrive\\Pulpit\\Biały-Goniec.png")); // NOI18N
         jPanel1.add(jButton25);
         jButton25.setBounds(160, 540, 50, 50);
-
-        jButton26.setIcon(new javax.swing.ImageIcon("C:\\Users\\kacpe\\OneDrive\\Pulpit\\Biały-Goniec.png")); // NOI18N
         jPanel1.add(jButton26);
         jButton26.setBounds(390, 540, 50, 50);
-
-        jButton27.setIcon(new javax.swing.ImageIcon("C:\\Users\\kacpe\\OneDrive\\Pulpit\\Czarny-Goniec.png")); // NOI18N
         jPanel1.add(jButton27);
         jButton27.setBounds(160, 10, 50, 50);
-
-        jButton28.setIcon(new javax.swing.ImageIcon("C:\\Users\\kacpe\\OneDrive\\Pulpit\\Czarny-Goniec.png")); // NOI18N
         jPanel1.add(jButton28);
         jButton28.setBounds(390, 10, 50, 50);
-
-        jButton29.setIcon(new javax.swing.ImageIcon("C:\\Users\\kacpe\\OneDrive\\Pulpit\\Biały-Król.png")); // NOI18N
         jPanel1.add(jButton29);
         jButton29.setBounds(310, 540, 50, 50);
-
-        jButton30.setIcon(new javax.swing.ImageIcon("C:\\Users\\kacpe\\OneDrive\\Pulpit\\Czarny-Król.png")); // NOI18N
         jPanel1.add(jButton30);
         jButton30.setBounds(310, 10, 50, 50);
-
-        jButton31.setIcon(new javax.swing.ImageIcon("C:\\Users\\kacpe\\OneDrive\\Pulpit\\Biały-Hetman.png")); // NOI18N
         jPanel1.add(jButton31);
         jButton31.setBounds(230, 540, 60, 50);
-
-        jButton32.setIcon(new javax.swing.ImageIcon("C:\\Users\\kacpe\\OneDrive\\Pulpit\\Czarny-Hetman.png")); // NOI18N
         jPanel1.add(jButton32);
         jButton32.setBounds(240, 10, 50, 50);
 
@@ -354,8 +293,6 @@ public class ServerProject extends javax.swing.JFrame {
         jButton63.setBounds(460, 390, 60, 50);
         jPanel1.add(jButton64);
         jButton64.setBounds(530, 390, 60, 50);
-
-        jLabel1.setIcon(new javax.swing.ImageIcon("C:\\Users\\kacpe\\OneDrive\\Pulpit\\Bord2.jpg")); // NOI18N
         jPanel1.add(jLabel1);
         jLabel1.setBounds(0, 0, 620, 610);
 
@@ -374,31 +311,34 @@ public class ServerProject extends javax.swing.JFrame {
         if(count==1){
             x1 = jButton1.getX();
             y1 = jButton1.getY();
-            jb.set(0, jButton1);
+            jb.add(jButton1);
+            
         }else{
             x2 = jButton1.getX();
             y2 = jButton1.getY();
             jButton1.setLocation(x1, y1);
             jb.get(0).setLocation(x2, y2);
-            jb.set(0, null);
+            jb.remove(0);
             count=0;
         }
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jButton17ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton17ActionPerformed
-        count++;
-        if(count==1){
-            x1 = jButton17.getX();
-            y1 = jButton17.getY();
-            jb.set(0, jButton17);
-        }else{
-            x2 = jButton17.getX();
-            y2 = jButton17.getY();
-            jButton17.setLocation(x1, y1);
-            jb.get(0).setLocation(x2, y2);
-            jb.set(0, null);
-            count=0;
-        }
+//        count++;
+//        if(count==1){
+//            x1 = jButton17.getX();
+//            y1 = jButton17.getY();
+//            jb.add(jButton17);
+//            
+//        }else{
+//            x2 = jButton17.getX();
+//            y2 = jButton17.getY();
+//            jButton17.setLocation(x1, y1);
+//            jb.get(0).setLocation(x2, y2);
+//            jb.remove(0);
+//            count=0;
+//        }
+        check(jButton17);
     }//GEN-LAST:event_jButton17ActionPerformed
 
     /**
@@ -442,8 +382,21 @@ public class ServerProject extends javax.swing.JFrame {
         jBt.setBorderPainted(false); 
     }
     
-    public static void check(JButton jBt){
-        
+    public void check(JButton jBt){
+        count++;
+        if(count==1){
+            x1 = jBt.getX();
+            y1 = jBt.getY();
+            jb.add(jBt);
+            
+        }else{
+            x2 = jBt.getX();
+            y2 = jBt.getY();
+            jBt.setLocation(x1, y1);
+            jb.get(0).setLocation(x2, y2);
+            jb.remove(0);
+            count=0;
+        }
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
