@@ -301,7 +301,7 @@
           </Events>
           <Constraints>
             <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-              <AbsoluteConstraints x="240" y="90" width="50" height="50"/>
+              <AbsoluteConstraints x="230" y="90" width="60" height="50"/>
             </Constraint>
           </Constraints>
         </Component>
@@ -434,7 +434,7 @@
         <Component class="javax.swing.JButton" name="jButton19">
           <Properties>
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="2" name="C:\Users\kacpe\OneDrive\Dokumenty\GitHub\repozytorium_KL\Desktopowe_KL_4PTN\ServerProject\Pics\CzWieza.png"/>
+              <Image iconType="3" name="/CzWieza.png"/>
             </Property>
             <Property name="maximumSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
               <Dimension value="[75, 75]"/>
@@ -520,9 +520,6 @@
         </Component>
         <Component class="javax.swing.JButton" name="jButton23">
           <Properties>
-            <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="2" name="C:\Users\kacpe\OneDrive\Dokumenty\GitHub\repozytorium_KL\Desktopowe_KL_4PTN\ServerProject\Pics\Czarny-Skoczek.png"/>
-            </Property>
             <Property name="maximumSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
               <Dimension value="[75, 75]"/>
             </Property>
@@ -1398,11 +1395,6 @@
           </Constraints>
         </Component>
         <Component class="javax.swing.JLabel" name="jLabel1">
-          <Properties>
-            <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="2" name="C:\Users\kacpe\OneDrive\Dokumenty\GitHub\repozytorium_KL\Desktopowe_KL_4PTN\ServerProject\Pics\Bord2.jpg"/>
-            </Property>
-          </Properties>
           <Constraints>
             <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
               <AbsoluteConstraints x="0" y="0" width="620" height="610"/>

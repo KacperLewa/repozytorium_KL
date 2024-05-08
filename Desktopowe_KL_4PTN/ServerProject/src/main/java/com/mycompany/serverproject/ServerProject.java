@@ -277,7 +277,7 @@ public class ServerProject extends javax.swing.JFrame {
             }
         });
         jPanel1.add(jButton12);
-        jButton12.setBounds(240, 90, 50, 50);
+        jButton12.setBounds(230, 90, 60, 50);
 
         jButton13.setMaximumSize(new java.awt.Dimension(75, 75));
         jButton13.setMinimumSize(new java.awt.Dimension(75, 75));
@@ -345,7 +345,7 @@ public class ServerProject extends javax.swing.JFrame {
         jPanel1.add(jButton18);
         jButton18.setBounds(540, 540, 50, 50);
 
-        jButton19.setIcon(new javax.swing.ImageIcon("C:\\Users\\kacpe\\OneDrive\\Dokumenty\\GitHub\\repozytorium_KL\\Desktopowe_KL_4PTN\\ServerProject\\Pics\\CzWieza.png")); // NOI18N
+        jButton19.setIcon(new javax.swing.ImageIcon(getClass().getResource("/CzWieza.png"))); // NOI18N
         jButton19.setMaximumSize(new java.awt.Dimension(75, 75));
         jButton19.setMinimumSize(new java.awt.Dimension(75, 75));
         jButton19.setPreferredSize(new java.awt.Dimension(75, 75));
@@ -390,7 +390,6 @@ public class ServerProject extends javax.swing.JFrame {
         jPanel1.add(jButton22);
         jButton22.setBounds(460, 540, 75, 50);
 
-        jButton23.setIcon(new javax.swing.ImageIcon("C:\\Users\\kacpe\\OneDrive\\Dokumenty\\GitHub\\repozytorium_KL\\Desktopowe_KL_4PTN\\ServerProject\\Pics\\Czarny-Skoczek.png")); // NOI18N
         jButton23.setMaximumSize(new java.awt.Dimension(75, 75));
         jButton23.setMinimumSize(new java.awt.Dimension(75, 75));
         jButton23.setPreferredSize(new java.awt.Dimension(75, 75));
@@ -850,8 +849,6 @@ public class ServerProject extends javax.swing.JFrame {
         });
         jPanel1.add(jButton64);
         jButton64.setBounds(530, 390, 60, 50);
-
-        jLabel1.setIcon(new javax.swing.ImageIcon("C:\\Users\\kacpe\\OneDrive\\Dokumenty\\GitHub\\repozytorium_KL\\Desktopowe_KL_4PTN\\ServerProject\\Pics\\Bord2.jpg")); // NOI18N
         jPanel1.add(jLabel1);
         jLabel1.setBounds(0, 0, 620, 610);
 
