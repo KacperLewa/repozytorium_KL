@@ -26,21 +26,168 @@ public class Kalkulator extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jPBackground = new javax.swing.JPanel();
+        jTFScreen = new javax.swing.JTextField();
+        jPGrid = new javax.swing.JPanel();
+        jB7 = new javax.swing.JButton();
+        jB8 = new javax.swing.JButton();
+        jB9 = new javax.swing.JButton();
+        jB4 = new javax.swing.JButton();
+        jB5 = new javax.swing.JButton();
+        jB6 = new javax.swing.JButton();
+        jB1 = new javax.swing.JButton();
+        jB2 = new javax.swing.JButton();
+        jB3 = new javax.swing.JButton();
+        jBPlus = new javax.swing.JButton();
+        jB0 = new javax.swing.JButton();
+        jBMinus = new javax.swing.JButton();
+        jBMultiply = new javax.swing.JButton();
+        jBDevide = new javax.swing.JButton();
+        jBReset = new javax.swing.JButton();
+
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setResizable(false);
+
+        jPBackground.setBackground(new java.awt.Color(140, 147, 161));
+
+        jTFScreen.setEditable(false);
+        jTFScreen.setBackground(new java.awt.Color(26, 82, 39));
+        jTFScreen.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        jTFScreen.setForeground(new java.awt.Color(202, 195, 227));
+        jTFScreen.setHorizontalAlignment(javax.swing.JTextField.RIGHT);
+        jTFScreen.setText("jTextField1");
+        jTFScreen.setMargin(new java.awt.Insets(10, 10, 10, 10));
+
+        jPGrid.setBackground(new java.awt.Color(140, 147, 161));
+        jPGrid.setLayout(new java.awt.GridLayout(5, 3));
+
+        jB7.setBackground(new java.awt.Color(66, 73, 87));
+        jB7.setFont(new java.awt.Font("Segoe UI", 0, 34)); // NOI18N
+        jB7.setText("7");
+        jPGrid.add(jB7);
+
+        jB8.setBackground(new java.awt.Color(66, 73, 87));
+        jB8.setFont(new java.awt.Font("Segoe UI", 0, 34)); // NOI18N
+        jB8.setText("8");
+        jPGrid.add(jB8);
+
+        jB9.setBackground(new java.awt.Color(66, 73, 87));
+        jB9.setFont(new java.awt.Font("Segoe UI", 0, 34)); // NOI18N
+        jB9.setText("9");
+        jPGrid.add(jB9);
+
+        jB4.setBackground(new java.awt.Color(66, 73, 87));
+        jB4.setFont(new java.awt.Font("Segoe UI", 0, 34)); // NOI18N
+        jB4.setText("4");
+        jPGrid.add(jB4);
+
+        jB5.setBackground(new java.awt.Color(66, 73, 87));
+        jB5.setFont(new java.awt.Font("Segoe UI", 0, 34)); // NOI18N
+        jB5.setText("5");
+        jPGrid.add(jB5);
+
+        jB6.setBackground(new java.awt.Color(66, 73, 87));
+        jB6.setFont(new java.awt.Font("Segoe UI", 0, 34)); // NOI18N
+        jB6.setText("6");
+        jPGrid.add(jB6);
+
+        jB1.setBackground(new java.awt.Color(66, 73, 87));
+        jB1.setFont(new java.awt.Font("Segoe UI", 0, 34)); // NOI18N
+        jB1.setText("1");
+        jB1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jB1ActionPerformed(evt);
+            }
+        });
+        jPGrid.add(jB1);
+
+        jB2.setBackground(new java.awt.Color(66, 73, 87));
+        jB2.setFont(new java.awt.Font("Segoe UI", 0, 34)); // NOI18N
+        jB2.setText("2");
+        jPGrid.add(jB2);
+
+        jB3.setBackground(new java.awt.Color(66, 73, 87));
+        jB3.setFont(new java.awt.Font("Segoe UI", 0, 34)); // NOI18N
+        jB3.setText("3");
+        jPGrid.add(jB3);
+
+        jBPlus.setBackground(new java.awt.Color(66, 73, 87));
+        jBPlus.setFont(new java.awt.Font("Segoe UI", 0, 34)); // NOI18N
+        jBPlus.setText("+");
+        jPGrid.add(jBPlus);
+
+        jB0.setBackground(new java.awt.Color(66, 73, 87));
+        jB0.setFont(new java.awt.Font("Segoe UI", 0, 34)); // NOI18N
+        jB0.setText("0");
+        jPGrid.add(jB0);
+
+        jBMinus.setBackground(new java.awt.Color(66, 73, 87));
+        jBMinus.setFont(new java.awt.Font("Segoe UI", 0, 34)); // NOI18N
+        jBMinus.setText("-");
+        jBMinus.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jBMinusActionPerformed(evt);
+            }
+        });
+        jPGrid.add(jBMinus);
+
+        jBMultiply.setBackground(new java.awt.Color(66, 73, 87));
+        jBMultiply.setFont(new java.awt.Font("Segoe UI", 0, 34)); // NOI18N
+        jBMultiply.setText("*");
+        jPGrid.add(jBMultiply);
+
+        jBDevide.setBackground(new java.awt.Color(66, 73, 87));
+        jBDevide.setFont(new java.awt.Font("Segoe UI", 0, 34)); // NOI18N
+        jBDevide.setText("/");
+        jPGrid.add(jBDevide);
+
+        jBReset.setBackground(new java.awt.Color(66, 73, 87));
+        jBReset.setFont(new java.awt.Font("Segoe UI", 0, 34)); // NOI18N
+        jBReset.setText("RESET");
+        jPGrid.add(jBReset);
+
+        javax.swing.GroupLayout jPBackgroundLayout = new javax.swing.GroupLayout(jPBackground);
+        jPBackground.setLayout(jPBackgroundLayout);
+        jPBackgroundLayout.setHorizontalGroup(
+            jPBackgroundLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPBackgroundLayout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(jPBackgroundLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jPGrid, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 488, Short.MAX_VALUE)
+                    .addComponent(jTFScreen))
+                .addContainerGap())
+        );
+        jPBackgroundLayout.setVerticalGroup(
+            jPBackgroundLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPBackgroundLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jTFScreen, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jPGrid, javax.swing.GroupLayout.PREFERRED_SIZE, 419, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 400, Short.MAX_VALUE)
+            .addComponent(jPBackground, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 300, Short.MAX_VALUE)
+            .addComponent(jPBackground, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void jB1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jB1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jB1ActionPerformed
+
+    private void jBMinusActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBMinusActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jBMinusActionPerformed
 
     /**
      * @param args the command line arguments
@@ -78,5 +225,23 @@ public class Kalkulator extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton jB0;
+    private javax.swing.JButton jB1;
+    private javax.swing.JButton jB2;
+    private javax.swing.JButton jB3;
+    private javax.swing.JButton jB4;
+    private javax.swing.JButton jB5;
+    private javax.swing.JButton jB6;
+    private javax.swing.JButton jB7;
+    private javax.swing.JButton jB8;
+    private javax.swing.JButton jB9;
+    private javax.swing.JButton jBDevide;
+    private javax.swing.JButton jBMinus;
+    private javax.swing.JButton jBMultiply;
+    private javax.swing.JButton jBPlus;
+    private javax.swing.JButton jBReset;
+    private javax.swing.JPanel jPBackground;
+    private javax.swing.JPanel jPGrid;
+    private javax.swing.JTextField jTFScreen;
     // End of variables declaration//GEN-END:variables
 }
